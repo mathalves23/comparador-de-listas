@@ -13,7 +13,6 @@ with open('lista2.csv', 'r') as csvfile:
     for row in spamreader2:
         lista2.append(row[0])
 
-
 iguais = []
 diferentes = []
 
@@ -23,6 +22,9 @@ for element in lista2:
     else:
         diferentes.append(element)
 
-
 print('Números presentes nas duas listas:', iguais)
 print('Números presentes apenas na lista comparada:', diferentes)
+
+with open("log-diferentes.csv", "w") as text_file:
+    for i in diferentes:
+        print(i, file=text_file)
